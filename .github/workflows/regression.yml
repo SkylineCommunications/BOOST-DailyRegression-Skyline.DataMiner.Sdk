@@ -116,7 +116,7 @@ jobs:
         id: add_tag
         run: |
           # Add a tag based on the current date or some version logic
-          VERSION_TAG="$(date +'%Y.%m.%d')"
+          VERSION_TAG="$(date +'%Y.%m.%d').${GITHUB_RUN_NUMBER}"
           git tag $VERSION_TAG
           git push origin $VERSION_TAG
           echo "::set-output name=VERSION_TAG::$VERSION_TAG"  # Set output for VERSION_TAG
