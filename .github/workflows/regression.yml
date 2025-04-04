@@ -6,14 +6,11 @@ on:
 
   workflow_dispatch: # Run manually
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   regression:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger workflow
-        id: trigger
-        # https://github.com/benc-uk/workflow-dispatch
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: complete.yml
@@ -41,7 +38,108 @@ jobs:
 
             let status = run.status;
             let conclusion = run.conclusion;
-            let details = ``;
+            let details = `BRANCH\n\n`;
+            
+            const startTime = new Date().getTime();
+            const timeout = 3600000; // 1 hour in ms
+
+            while (status !== 'completed') {
+              if (new Date().getTime() - startTime > timeout) {
+                details += "!! Secondary workflow did not finish in time !!\n\n";
+                core.setFailed("Timeout: Secondary workflow did not finish in time.");
+                break;
+              }
+
+              await new Promise(r => setTimeout(r, 10000));
+              const check = await github.rest.actions.getWorkflowRun({ owner, repo, run_id: runId });
+              status = check.data.status;
+              conclusion = check.data.conclusion;
+            }
+
+            let failedJobs = [];
+
+            if (conclusion !== 'success') {
+              const jobs = await github.rest.actions.listJobsForWorkflowRun({
+                owner,
+                repo,
+                run_id: runId
+              });
+
+              for (const job of jobs.data.jobs) {
+                if (job.conclusion === 'failure') {
+                  failedJobs.push(`Job: ${job.name}`);
+                  for (const step of job.steps) {
+                    if (step.conclusion === 'failure') {
+                      failedJobs.push(`  - Step: ${step.name}`);
+                    }
+                  }
+                }
+              }
+
+              details += failedJobs.join('\n');
+            } else {
+              details += "No failures detected.";
+            }
+
+            core.setOutput("run_url", runUrl);
+            core.setOutput("details", details);
+
+            if (conclusion !== 'success') {
+              core.setFailed(`Secondary workflow failed. Details: ${runUrl}`);
+            }
+        
+      - name: Notify via Teams
+        if: failure()
+        run: |
+          dotnet tool install -g Skyline.DataMiner.CICD.Tools.MSTeamsWorkflowWebhookCard
+
+          webhook-to-teams from-cicd \
+            --name "${{ github.repository }}" \
+            --http-post-url "${{ secrets.TEAMS_WEBHOOK }}" \
+            --result Failure \
+            --url-to-build "${{ steps.wait_for_completion.outputs.run_url }}" \
+            --details "${{ steps.wait_for_completion.outputs.details }}"
+
+            
+  regression-release:
+    runs-on: ubuntu-latest
+    if: ${{ always() }}
+    needs: regression
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Add tag
+        id: add_tag
+        run: |
+          # Add a tag based on the current date or some version logic
+          VERSION_TAG="v$(date +'%Y.%m.%d')"
+          git tag $VERSION_TAG
+          git push origin $VERSION_TAG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Wait for workflow to complete
+        uses: actions/github-script@v6
+        id: wait_for_completion
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+
+            const workflowRuns = await github.rest.actions.listWorkflowRuns({
+              owner,
+              repo,
+              workflow_id: 'complete.yml',
+              event: 'push'
+            });
+
+            const run = workflowRuns.data.workflow_runs[0];
+            const runId = run.id;
+            const runUrl = run.html_url;
+
+            let status = run.status;
+            let conclusion = run.conclusion;
+            let details = `RELEASE\n\n`;
             
             const startTime = new Date().getTime();
             const timeout = 3600000; // 1 hour in ms
