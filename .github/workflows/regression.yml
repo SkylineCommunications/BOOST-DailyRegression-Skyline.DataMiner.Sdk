@@ -122,6 +122,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Trigger workflow
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: complete.yml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: refs/tags/${{ steps.add_tag.outputs.VERSION_TAG }}
+
       - name: Wait for a short delay before checking the status
         run: |
           echo "Sleeping for 15 seconds to ensure workflow is registered..."
