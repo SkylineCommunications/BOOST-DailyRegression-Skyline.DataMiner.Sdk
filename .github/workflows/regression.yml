@@ -17,6 +17,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: main
 
+      - name: Wait for a short delay before checking the status
+        run: |
+          echo "Sleeping for 15 seconds to ensure workflow is registered..."
+          sleep 15
+
       - name: Wait for workflow to complete
         uses: actions/github-script@v6
         id: wait_for_completion
@@ -32,14 +37,14 @@ jobs:
               event: 'workflow_dispatch'
             });
 
-            const run = workflowRuns.data.workflow_runs[0];
+            const run = workflowRuns.data.workflow_runs.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))[0];
             const runId = run.id;
             const runUrl = run.html_url;
 
             let status = run.status;
             let conclusion = run.conclusion;
             let details = `BRANCH\n\n`;
-            
+
             const startTime = new Date().getTime();
             const timeout = 3600000; // 1 hour in ms
 
@@ -87,7 +92,7 @@ jobs:
             if (conclusion !== 'success') {
               core.setFailed(`Secondary workflow failed. Details: ${runUrl}`);
             }
-        
+
       - name: Notify via Teams
         if: failure()
         run: |
@@ -100,7 +105,6 @@ jobs:
             --url-to-build "${{ steps.wait_for_completion.outputs.run_url }}" \
             --details "${{ steps.wait_for_completion.outputs.details }}"
 
-            
   regression-release:
     runs-on: ubuntu-latest
     if: ${{ always() }}
@@ -112,11 +116,16 @@ jobs:
         id: add_tag
         run: |
           # Add a tag based on the current date or some version logic
-          VERSION_TAG="v$(date +'%Y.%m.%d')"
+          VERSION_TAG="$(date +'%Y.%m.%d')"
           git tag $VERSION_TAG
           git push origin $VERSION_TAG
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Wait for a short delay before checking the status
+        run: |
+          echo "Sleeping for 15 seconds to ensure workflow is registered..."
+          sleep 15
 
       - name: Wait for workflow to complete
         uses: actions/github-script@v6
@@ -133,14 +142,14 @@ jobs:
               event: 'push'
             });
 
-            const run = workflowRuns.data.workflow_runs[0];
+            const run = workflowRuns.data.workflow_runs.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))[0];
             const runId = run.id;
             const runUrl = run.html_url;
 
             let status = run.status;
             let conclusion = run.conclusion;
             let details = `RELEASE\n\n`;
-            
+
             const startTime = new Date().getTime();
             const timeout = 3600000; // 1 hour in ms
 
@@ -188,7 +197,7 @@ jobs:
             if (conclusion !== 'success') {
               core.setFailed(`Secondary workflow failed. Details: ${runUrl}`);
             }
-        
+
       - name: Notify via Teams
         if: failure()
         run: |
