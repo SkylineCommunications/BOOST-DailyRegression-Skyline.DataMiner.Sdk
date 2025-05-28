@@ -26,7 +26,7 @@ type: Custom Solution
 # If the ID is filled in but does not exist yet, a new Catalog item will be registered with this ID.
 # If the ID is filled in but does exist, properties of the item will be overwritten.
 #   Must be a valid GUID.
-id: e94b3a3f-e6b7-4851-a68e-f3874531a5b3
+id: 1a0cab68-65ea-42a5-80e2-c2473ffa4538
 
 # [Required]
 # The human-friendly name of the Catalog item.
