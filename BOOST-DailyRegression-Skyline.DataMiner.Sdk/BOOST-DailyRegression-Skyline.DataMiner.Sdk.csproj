@@ -15,9 +15,9 @@
     <UserSecretsId>71263c41-4e01-4851-a996-cf79fba9caff</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Skyline.DataMiner.Core.AppPackageInstaller" Version="3.0.0" />
+    <PackageReference Include="Skyline.DataMiner.Core.AppPackageInstaller" Version="3.2.0" />
     <PackageReference Include="Skyline.DataMiner.Dev.Automation" Version="10.3.0.25" />
-    <PackageReference Include="Skyline.DataMiner.Utils.SecureCoding.Analyzers" Version="2.0.4">
+    <PackageReference Include="Skyline.DataMiner.Utils.SecureCoding.Analyzers" Version="2.2.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
