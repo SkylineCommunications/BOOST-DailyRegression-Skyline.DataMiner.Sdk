@@ -24,6 +24,14 @@ internal class Script
             var installer = new AppInstaller(Engine.SLNetRaw, context);
             installer.InstallDefaultContent();
 
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
             ////string setupContentPath = installer.GetSetupContentDirectory();
 
             // Custom installation logic can be added here for each individual install package.
