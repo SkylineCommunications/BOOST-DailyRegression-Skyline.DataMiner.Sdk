@@ -32,10 +32,466 @@ internal class Script
 				}
 			}
 
-            ////string setupContentPath = installer.GetSetupContentDirectory();
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
 
-            // Custom installation logic can be added here for each individual install package.
-        }
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; i < 10; j++)
+				{
+					// Do Nothing
+				}
+			}
+
+			////string setupContentPath = installer.GetSetupContentDirectory();
+
+			// Custom installation logic can be added here for each individual install package.
+		}
         catch (Exception e)
         {
             engine.ExitFail($"Exception encountered during installation: {e}");
